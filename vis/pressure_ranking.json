@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "title": "Overall Cost Pressure Ranking by State",
+  "data": {"url": "data/cleaned/state_cost_pressure.csv"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {
+      "field": "Pressure",
+      "type": "quantitative",
+      "title": "Pressure Index"
+    },
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State"
+    },
+    "color": {
+      "field": "Pressure",
+      "type": "quantitative",
+      "scale": {"scheme": "reds"},
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "Pressure", "type": "quantitative", "title": "Pressure Index"}
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "title": "Household Expense Distribution",
+  "data": {
+    "url": "data/cleaned/household_spending_share.csv"
+  },
+  "mark": {
+    "type": "arc",
+    "innerRadius": 70,
+    "outerRadius": 130
+  },
+  "encoding": {
+    "theta": {
+      "field": "Share",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "title": "Category"
+    },
+    "tooltip": [
+      {"field": "Category", "type": "nominal"},
+      {"field": "Share", "type": "quantitative", "title": "Share (%)"},
+      {"field": "Inflation", "type": "quantitative", "title": "Inflation (%)"}
+    ]
+  }
+}

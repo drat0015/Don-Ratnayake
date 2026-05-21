@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "title": "Household Spending Share and Inflation Pressure",
+  "data": {
+    "url": "data/cleaned/household_spending_share.csv"
+  },
+  "mark": {
+    "type": "rect"
+  },
+  "encoding": {
+    "x": {
+      "field": "Share",
+      "type": "quantitative",
+      "title": "Spending Share (%)"
+    },
+    "y": {
+      "field": "Category",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Category"
+    },
+    "color": {
+      "field": "Inflation",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered"
+      },
+      "title": "Inflation (%)"
+    },
+    "tooltip": [
+      {
+        "field": "Category",
+        "type": "nominal"
+      },
+      {
+        "field": "Share",
+        "type": "quantitative",
+        "title": "Share (%)"
+      },
+      {
+        "field": "Inflation",
+        "type": "quantitative",
+        "title": "Inflation (%)"
+      }
+    ]
+  }
+}

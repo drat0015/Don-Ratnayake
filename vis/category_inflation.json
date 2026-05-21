@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "title": "Inflation by Spending Category",
+  "data": {"url": "data/cleaned/category_inflation.csv"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {
+      "field": "Inflation",
+      "type": "quantitative",
+      "title": "Inflation (%)"
+    },
+    "y": {
+      "field": "Category",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Category"
+    },
+    "color": {
+      "field": "Inflation",
+      "type": "quantitative",
+      "scale": {"scheme": "orangered"},
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "Category", "type": "nominal"},
+      {"field": "Inflation", "type": "quantitative", "title": "Inflation (%)"}
+    ]
+  }
+}
+

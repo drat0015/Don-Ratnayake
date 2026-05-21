@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 450,
+  "title": "Cost of Living Pressure Across Australia",
+  "data": {
+    "url": "data/maps/australia_states.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "mercator"
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "url": "data/cleaned/state_cost_pressure.csv"
+        },
+        "key": "State",
+        "fields": ["Pressure"]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "color": {
+      "field": "Pressure",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "reds"
+      },
+      "title": "Pressure Index"
+    },
+    "tooltip": [
+      {
+        "field": "properties.STATE_NAME",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "Pressure",
+        "type": "quantitative",
+        "title": "Pressure Index"
+      }
+    ]
+  }
+}

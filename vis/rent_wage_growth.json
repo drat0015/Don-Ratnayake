@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "title": "Rent Growth Compared with Wage Growth",
+  "data": {
+    "url": "data/cleaned/rent_wage_growth.csv"
+  },
+  "transform": [
+    {
+      "fold": ["RentGrowth", "WageGrowth"],
+      "as": ["Measure", "Growth"]
+    }
+  ],
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x": {
+      "field": "State",
+      "type": "nominal",
+      "title": "State",
+      "axis": {
+        "labelAngle": -35
+      }
+    },
+    "y": {
+      "field": "Growth",
+      "type": "quantitative",
+      "title": "Growth (%)"
+    },
+    "xOffset": {
+      "field": "Measure"
+    },
+    "color": {
+      "field": "Measure",
+      "type": "nominal",
+      "title": "Measure"
+    },
+    "tooltip": [
+      {
+        "field": "State",
+        "type": "nominal"
+      },
+      {
+        "field": "Measure",
+        "type": "nominal"
+      },
+      {
+        "field": "Growth",
+        "type": "quantitative",
+        "title": "Growth (%)"
+      }
+    ]
+  }
+}

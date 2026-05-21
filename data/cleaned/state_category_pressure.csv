@@ -1,0 +1,33 @@
+State,Category,Pressure
+New South Wales,Housing,92
+New South Wales,Food,78
+New South Wales,Transport,74
+New South Wales,Utilities,81
+Victoria,Housing,86
+Victoria,Food,76
+Victoria,Transport,72
+Victoria,Utilities,78
+Queensland,Housing,75
+Queensland,Food,73
+Queensland,Transport,77
+Queensland,Utilities,69
+Western Australia,Housing,70
+Western Australia,Food,68
+Western Australia,Transport,72
+Western Australia,Utilities,65
+South Australia,Housing,72
+South Australia,Food,70
+South Australia,Transport,66
+South Australia,Utilities,71
+Tasmania,Housing,66
+Tasmania,Food,64
+Tasmania,Transport,62
+Tasmania,Utilities,68
+Northern Territory,Housing,58
+Northern Territory,Food,63
+Northern Territory,Transport,71
+Northern Territory,Utilities,60
+Australian Capital Territory,Housing,82
+Australian Capital Territory,Food,72
+Australian Capital Territory,Transport,65
+Australian Capital Territory,Utilities,74

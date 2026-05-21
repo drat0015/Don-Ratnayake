@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "title": "Cost Pressure by State and Spending Category",
+  "data": {
+    "url": "data/cleaned/state_category_pressure.csv"
+  },
+  "mark": {
+    "type": "rect"
+  },
+  "encoding": {
+    "x": {
+      "field": "Category",
+      "type": "nominal",
+      "title": "Spending Category"
+    },
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "title": "State"
+    },
+    "color": {
+      "field": "Pressure",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered"
+      },
+      "title": "Pressure Index"
+    },
+    "tooltip": [
+      {
+        "field": "State",
+        "type": "nominal"
+      },
+      {
+        "field": "Category",
+        "type": "nominal"
+      },
+      {
+        "field": "Pressure",
+        "type": "quantitative",
+        "title": "Pressure Index"
+      }
+    ]
+  }
+}

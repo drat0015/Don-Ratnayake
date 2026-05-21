@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Australia Cost of Living Crisis</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="main-title">Australia's Cost of Living Crisis</h1>
+
+      <p class="subtitle">
+        How Rising Costs Are Pressuring Households Across the Country
+      </p>
+
+      <div class="hero-banner">
+        Rising living costs are reshaping financial pressure across Australian
+        households, with housing, food and transport becoming the largest
+        burdens.
+      </div>
+      <!-- SECTION 1 -->
+
+      <h2 class="section-title">National Economic Overview</h2>
+
+      <p class="description">
+        Rising inflation, housing costs and transport expenses are placing
+        increasing pressure on Australian households.
+      </p>
+
+      <div class="chart-grid-2">
+        <div class="chart-box">
+          <div id="map"></div>
+        </div>
+
+        <div class="chart-box">
+          <div id="inflation"></div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+
+      <h2 class="section-title">Daily Living Cost Analysis</h2>
+
+      <p class="description">
+        Key household spending categories such as food, housing and utilities
+        continue to contribute to financial stress.
+      </p>
+
+      <div class="chart-grid-3">
+        <div class="chart-box">
+          <div id="category"></div>
+        </div>
+
+        <div class="chart-box">
+          <div id="food"></div>
+        </div>
+
+        <div class="chart-box">
+          <div id="ranking"></div>
+        </div>
+      </div>
+
+      <!-- NEW HEATMAP SECTION -->
+
+      <section>
+        <h2 class="section-title">
+          Where Are Households Feeling the Most Pressure?
+        </h2>
+
+        <p class="description">
+          This heatmap compares cost pressure across Australian states and major
+          household spending categories.
+        </p>
+
+        <div class="chart-grid-2">
+          <div class="chart-box">
+            <div id="heatmap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Which Expenses Take the Biggest Share?</h2>
+
+        <p class="description">
+          This chart shows how major household expense categories differ in
+          spending share and inflation pressure.
+        </p>
+
+        <div class="chart-grid-2">
+          <div class="chart-box">
+            <div id="treemap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Are Wages Keeping Up With Rent?</h2>
+
+        <p class="description">
+          Rent growth is compared against wage growth to show the affordability
+          gap facing households across Australian states.
+        </p>
+
+        <div class="chart-grid-2">
+          <div class="chart-box">
+            <div id="rentwage"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">How Household Budgets Are Split</h2>
+
+        <p class="description">
+          The donut chart shows which expense groups take the largest share of
+          household budgets.
+        </p>
+
+        <div class="chart-grid-2">
+          <div class="chart-box">
+            <div id="donut"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Key Findings</h2>
+
+        <p class="description">
+          The dashboard highlights the main patterns behind Australia’s
+          cost-of-living pressure.
+        </p>
+
+        <div class="insight-grid">
+          <div class="insight-card">
+            <h3>Highest Pressure</h3>
+            <p class="big-number">92</p>
+            <p>New South Wales records the highest pressure index.</p>
+          </div>
+
+          <div class="insight-card">
+            <h3>Fastest Rising Cost</h3>
+            <p class="big-number">7.3%</p>
+            <p>
+              Insurance shows the strongest inflation pressure among major
+              categories.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <h3>Rent Gap</h3>
+            <p class="big-number">8.2%</p>
+            <p>
+              Rent growth in New South Wales is much higher than wage growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+
+      <div class="footer">
+        <p><strong>Designed by:</strong> Don Ratnayake</p>
+
+        <p><strong>Date:</strong> 29 May 2026</p>
+
+        <p>
+          <strong>Data Sources:</strong>
+          Australian Bureau of Statistics (ABS), CPI datasets, household
+          expenditure datasets and state-level cost pressure indicators.
+        </p>
+
+        <p>
+          <strong>AI Acknowledgement:</strong>
+          Generative AI tools were used for planning support, coding assistance
+          and grammar checking.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      vegaEmbed("#map", "vis/cost_pressure_map.json").catch(console.error);
+      vegaEmbed("#inflation", "vis/inflation_trend.json").catch(console.error);
+      vegaEmbed("#category", "vis/category_inflation.json").catch(
+        console.error,
+      );
+      vegaEmbed("#food", "vis/food_price_growth.json").catch(console.error);
+      vegaEmbed("#ranking", "vis/pressure_ranking.json").catch(console.error);
+      vegaEmbed("#heatmap", "vis/state_category_heatmap.json").catch(
+        console.error,
+      );
+      vegaEmbed("#treemap", "vis/household_treemap.json").catch(console.error);
+      vegaEmbed("#rentwage", "vis/rent_wage_growth.json").catch(console.error);
+      vegaEmbed("#donut", "vis/expense_donut.json").catch(console.error);
+    </script>
+  </body>
+</html>
